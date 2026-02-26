@@ -31,14 +31,12 @@ class ShopProvider with ChangeNotifier {
 
    void addToCart(Product product) {
 
-    // Prevent duplicate products
     if (!cart.any((p) => p.id == product.id)) {
       cart.add(product);
     }
 
     recalculateTotal();
 
-    notifyListeners();
   }
 
   void removeFromCart(Product product) {
